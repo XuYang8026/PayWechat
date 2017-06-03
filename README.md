@@ -1,5 +1,9 @@
-# TLChat
-高仿微信，iOSAppTemplate代码重构。
+# PayChat
+高仿微信
+
+新增扫一扫支付完整流程
+
+部分代码来自其他开发者
 
 <img src="./Screenshot/1.PNG" width = "375" height = "667" alt="screenshot1" align=center />
 
