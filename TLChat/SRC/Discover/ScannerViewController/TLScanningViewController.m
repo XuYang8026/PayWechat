@@ -155,39 +155,50 @@ static SystemSoundID shake_sound_male_id = 0;
 #pragma mark - Private Methods -
 - (void)p_analysisQRAnswer:(NSString *)ansStr
 {
-    if ([ansStr hasPrefix:@"http"]) {
-        TLWebViewController *webVC = [[TLWebViewController alloc] init];
-        [webVC setUrl:ansStr];
-        __block id vc = self.navigationController.rootViewController;
-        [self.navigationController popViewControllerAnimated:NO completion:^(BOOL finished) {
-            if (finished) {
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                    [vc setHidesBottomBarWhenPushed:YES];
-                    [[vc navigationController] pushViewController:webVC animated:YES];
-                    [vc setHidesBottomBarWhenPushed:NO];
-                });
-            }
-        }];
-    }
-    else {
-        if ([ansStr hasPrefix:@"wxp://"]) {
-            __block id vc = self.navigationController.rootViewController;
-            [self.navigationController popViewControllerAnimated:NO completion:^(BOOL finished) {
-                if (finished) {
-                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                        [vc setHidesBottomBarWhenPushed:YES];
-                        [[vc navigationController] pushViewController:[TLPayViewControllerViewController new] animated:YES];
-                        [vc setHidesBottomBarWhenPushed:NO];
-                    });
-                }
-            }];
-            
-        }else{
-            [UIAlertView bk_showAlertViewWithTitle:@"扫描结果" message:ansStr cancelButtonTitle:@"确定" otherButtonTitles:nil handler:^(UIAlertView *alertView, NSInteger buttonIndex) {
-                [self.scanVC startCodeReading];
-            }];
+    __block id vc = self.navigationController.rootViewController;
+    [self.navigationController popViewControllerAnimated:NO completion:^(BOOL finished) {
+        if (finished) {
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [vc setHidesBottomBarWhenPushed:YES];
+                [[vc navigationController] pushViewController:[TLPayViewControllerViewController new] animated:YES];
+                [vc setHidesBottomBarWhenPushed:NO];
+            });
         }
-    }
+    }];
+    
+//    if ([ansStr hasPrefix:@"http"]) {
+//        TLWebViewController *webVC = [[TLWebViewController alloc] init];
+//        [webVC setUrl:ansStr];
+//        __block id vc = self.navigationController.rootViewController;
+//        [self.navigationController popViewControllerAnimated:NO completion:^(BOOL finished) {
+//            if (finished) {
+//                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//                    [vc setHidesBottomBarWhenPushed:YES];
+//                    [[vc navigationController] pushViewController:webVC animated:YES];
+//                    [vc setHidesBottomBarWhenPushed:NO];
+//                });
+//            }
+//        }];
+//    }
+//    else {
+//        if ([ansStr hasPrefix:@"wxp://"]) {
+//            __block id vc = self.navigationController.rootViewController;
+//            [self.navigationController popViewControllerAnimated:NO completion:^(BOOL finished) {
+//                if (finished) {
+//                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//                        [vc setHidesBottomBarWhenPushed:YES];
+//                        [[vc navigationController] pushViewController:[TLPayViewControllerViewController new] animated:YES];
+//                        [vc setHidesBottomBarWhenPushed:NO];
+//                    });
+//                }
+//            }];
+//            
+//        }else{
+//            [UIAlertView bk_showAlertViewWithTitle:@"扫描结果" message:ansStr cancelButtonTitle:@"确定" otherButtonTitles:nil handler:^(UIAlertView *alertView, NSInteger buttonIndex) {
+//                [self.scanVC startCodeReading];
+//            }];
+//        }
+//    }
 }
 
 - (void)p_addMasonry
