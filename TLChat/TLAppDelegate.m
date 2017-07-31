@@ -125,15 +125,15 @@
 
 - (void)p_initUserData
 {
-    NSNumber *lastRunDate = [[NSUserDefaults standardUserDefaults] objectForKey:@"lastRunDate"];
+//    NSNumber *lastRunDate = [[NSUserDefaults standardUserDefaults] objectForKey:@"lastRunDate"];
     
-    if (lastRunDate == nil) {
-        [UIAlertView bk_showAlertViewWithTitle:@"提示" message:@"首次启动App，是否随机下载两组个性表情包，稍候也可在“我的”-“表情”中选择下载。" cancelButtonTitle:@"取消" otherButtonTitles:@[@"确定"] handler:^(UIAlertView *alertView, NSInteger buttonIndex) {
-            if (buttonIndex == 1) {
-                [self p_downloadDefaultExpression];
-            }
-        }];
-    }
+//    if (lastRunDate == nil) {
+//        [UIAlertView bk_showAlertViewWithTitle:@"提示" message:@"首次启动App，是否随机下载两组个性表情包，稍候也可在“我的”-“表情”中选择下载。" cancelButtonTitle:@"取消" otherButtonTitles:@[@"确定"] handler:^(UIAlertView *alertView, NSInteger buttonIndex) {
+//            if (buttonIndex == 1) {
+//                [self p_downloadDefaultExpression];
+//            }
+//        }];
+//    }
 //    
 //    NSDate *date = [NSDate dateWithTimeIntervalSince1970:lastRunDate.doubleValue];
 //    NSNumber *sponsorStatus = [[NSUserDefaults standardUserDefaults] objectForKey:@"sponsorStatus"];

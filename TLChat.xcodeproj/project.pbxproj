@@ -3301,7 +3301,7 @@
 				TargetAttributes = {
 					C2097EE21C52326500163B5C = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = LLNHUK4DDQ;
+						DevelopmentTeam = 63V2ZJP9UV;
 						ProvisioningStyle = Automatic;
 					};
 					C2097EFB1C52326500163B5C = {
@@ -3840,7 +3840,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = LLNHUK4DDQ;
+				DEVELOPMENT_TEAM = 63V2ZJP9UV;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TLChat/Extensions/Vendors/JSPatch",
@@ -3866,7 +3866,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = LLNHUK4DDQ;
+				DEVELOPMENT_TEAM = 63V2ZJP9UV;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TLChat/Extensions/Vendors/JSPatch",
